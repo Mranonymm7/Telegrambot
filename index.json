@@ -1,0 +1,15 @@
+const { Telegraf } = require('telegraf');
+const bot = new Telegraf('6838769273:AAEOn_YJgM0jbaN_FaLu6qVbeq9THkj0P6c');
+
+bot.on('text', (ctx) => {
+    const text = ctx.message.text;
+    const transformedText = transformText(text);
+    ctx.reply(transformedText);
+});
+
+function transformText(text) {
+    // Implement a function to transform text into different styles
+    return text.toUpperCase(); // For example, transform to uppercase
+}
+
+bot.launch();
